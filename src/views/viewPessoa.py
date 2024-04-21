@@ -1,5 +1,5 @@
 import flet as ft
-import cadastroPessoa as cp
+import src.views.cadastroPessoa as cp
 from pessoaRepositorie import PessoaRepositorie as pr
 
 def main(page: ft.Page):
