@@ -1,0 +1,19 @@
+CREATE TABLE "person" (
+	"id" INT NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"name" TEXT NOT NULL,
+	"document" TEXT NOT NULL,
+	"age" INT NOT NULL,
+	"phone" TEXT NOT NULL,
+	"email" TEXT NOT NULL,
+	"created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE "address" (
+	"id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"address" TEXT NOT NULL,
+	"created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	"person_id" INTEGER NOT NULL,
+	CONSTRAINT "address_personId_fkey" FOREIGN KEY ("person_id") REFERENCES "person" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+CREATE UNIQUE INDEX "person_email_key" ON "person"("email");

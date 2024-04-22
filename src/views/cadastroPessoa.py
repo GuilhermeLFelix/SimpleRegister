@@ -1,10 +1,13 @@
 import flet as ft
-from pessoaRepositorie import PessoaRepositorie as pr
 
 def main(page: ft.Page):
     def btn_cadastrar_click(e):
         if all([nome_input.value, idade_input.value]):
-            pr.insert(nome_input.value, idade_input.value, documento_input.value, telefone_input.value, email_input.value)
+            pr.insert(nome_input.value, 
+                      idade_input.value, 
+                      documento_input.value, 
+                      telefone_input.value, 
+                      email_input.value)
             dlg = ft.AlertDialog(title=ft.Text('Sucesso'))
             page.dialog = dlg
             dlg.open = True
